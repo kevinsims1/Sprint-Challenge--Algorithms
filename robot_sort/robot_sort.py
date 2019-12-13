@@ -99,20 +99,27 @@ class SortingRobot:
         while True:
             #initial swap
             self.swap_item()
+
             self.move_right()
 
             if self.compare_item() == 1:
                 #if a swap is needed do this
                 self.swap_item()
+
                 self.move_left()
+
                 self.swap_item()
+
                 self.move_right()
                 #we have made a change
                 self.set_light_on()
+
             else:
                 #if swap was not needed, undo initial swap
                 self.move_left()
+
                 self.swap_item()
+                
                 self.move_right()
 
             if not self.can_move_right():
